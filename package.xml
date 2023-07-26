@@ -12,6 +12,7 @@
   <depend>rclcpp</depend>
   <depend>sensor_msgs</depend>
   <depend>libpointmatcher_ros</depend>
+  <depend>rosbag2_cpp</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
