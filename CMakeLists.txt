@@ -29,7 +29,11 @@ target_link_libraries(nan_remover ${libpointmatcher_LIBRARIES})
 add_executable(vtk_to_csv_node src/vtk_to_csv.cpp)
 target_link_libraries(vtk_to_csv_node ${libpointmatcher_LIBRARIES})
 
-install(TARGETS point_cloud_exporter point_clouds_exporter nan_remover vtk_to_csv_node
+add_executable(point_cloud_downsampler src/point_cloud_downsampler.cpp)
+ament_target_dependencies(point_cloud_downsampler rclcpp sensor_msgs libpointmatcher_ros)
+target_link_libraries(point_cloud_downsampler ${libpointmatcher_LIBRARIES})
+
+install(TARGETS point_cloud_exporter point_clouds_exporter nan_remover vtk_to_csv_node point_cloud_downsampler
   DESTINATION lib/${PROJECT_NAME}
 )
 
